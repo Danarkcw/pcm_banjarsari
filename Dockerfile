@@ -24,10 +24,12 @@ RUN SECRET_KEY=hanya-untuk-build DEBUG=False python manage.py collectstatic --no
 # Jalankan sebagai user non-root
 RUN useradd --create-home --uid 1000 app \
     && mkdir -p /app/media \
-    && chown -R app:app /app/media /app/staticfiles
+    && chown -R app:app /app/media /app/staticfiles \
+    && chmod +x /app/docker-entrypoint.sh
 USER app
 
 EXPOSE 8000
 
 # Mendengarkan port dari variabel PORT (default 8000) agar image sama bisa dipakai di Render/Railway.
-CMD ["sh", "-c", "gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers ${WEB_CONCURRENCY:-2}"]
+# docker-entrypoint.sh menjalankan migrate lalu Gunicorn.
+ENTRYPOINT ["./docker-entrypoint.sh"]
