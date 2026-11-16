@@ -90,7 +90,7 @@ docker compose exec web uv run python manage.py createsuperuser
 - **Platform:** Vercel — gratis tanpa kartu kredit, serverless function dengan global CDN untuk file statis, auto-deploy dari GitHub
 - **Database:** Neon (PostgreSQL serverless gratis) — direct connection untuk migrasi dari laptop, connection pooler untuk produksi
 - **Object storage media:** Supabase Storage (via S3-compatible API) — gratis 1 GB, mudah diintegrasikan dengan django-storages
-- **URL produksi:** _akan diisi setelah deploy_
+- **URL produksi:** https://pcm-banjarsari.vercel.app/
 
 Langkah ringkas: atur environment variable di dashboard platform, jalankan
 `DATABASE_URL=<url produksi> uv run python manage.py migrate` lalu `... seed_pcm` dari laptop, dan buat superuser.
