@@ -18,32 +18,32 @@ Tugas 1 — Pemrograman Web berbasis Framework (TIF1336): membangun dan men-depl
 
 - **PCM Banjarsari**, Kecamatan Banjarsari, Kota Surakarta, Jawa Tengah (PDM Kota Surakarta, PWM Jawa Tengah).
 - Sekretariat: Jl. KH. Ahmad Dahlan No. 35, Keprabon, Surakarta, telp. 0271-667533 (kontak resmi sekretariat dari kop surat PCM).
-- **Pengurus yang memberi izin:** _isi nama dan jabatan pengurus PCM Banjarsari yang mengizinkan data/foto dipakai_.
+- **Pengurus yang memberi izin:** Sumardi, Sekretaris PCM Banjarsari.
 
 ## Sumber data
 
 | Data | Sumber | Tanggal diambil |
 |------|--------|-----------------|
-| Susunan pimpinan 2022–2027 | SK PCM Banjarsari No. 157/KEP/IV.0/D/2023 (21 Okt 2023) dan SK PDM Kota Surakarta No. 128/KEP/III.0/D/2023 | _isi_ |
-| Sejarah dan SK pendirian cabang | SK PWM Jawa Tengah No. K/79/1978 (24 Muharram 1398 H / 4 Jan 1978 M) | _isi_ |
-| Daftar ranting, SK pendirian ranting, jumlah anggota ber-NBM (513) | Laporan Musyawarah Cabang Muhammadiyah Banjarsari 2023, hlm. 9 (angka periode 2015–2022) | _isi_ |
-| Ketua ranting Keprabon, Timuran, Punggawan, Kestalan | SK PCM No. 168, 174, 171, 169/KEP/IV.0/D/2023 (25 Des 2023) | _isi_ |
-| Ketua ranting Ketelan dan Gilingan | SK PCM No. 018/KEP/IV.0/D/2026 (26 Jun 2026) dan No. 029/KEP/IV.0/D/2026 (9 Okt 2026) | _isi_ |
+| Susunan pimpinan 2022–2027 | SK PCM Banjarsari No. 157/KEP/IV.0/D/2023 (21 Okt 2023) dan SK PDM Kota Surakarta No. 128/KEP/III.0/D/2023 | 16 Nov 2026 |
+| Sejarah dan SK pendirian cabang | SK PWM Jawa Tengah No. K/79/1978 (24 Muharram 1398 H / 4 Jan 1978 M) | 16 Nov 2026 |
+| Daftar ranting, SK pendirian ranting, jumlah anggota ber-NBM (513) | Laporan Musyawarah Cabang Muhammadiyah Banjarsari 2023, hlm. 9 (angka periode 2015–2022) | 16 Nov 2026 |
+| Ketua ranting Keprabon, Timuran, Punggawan, Kestalan | SK PCM No. 168, 174, 171, 169/KEP/IV.0/D/2023 (25 Des 2023) | 16 Nov 2026 |
+| Ketua ranting Ketelan dan Gilingan | SK PCM No. 018/KEP/IV.0/D/2026 (26 Jun 2026) dan No. 029/KEP/IV.0/D/2026 (9 Okt 2026) | 16 Nov 2026 |
 | Ketua ranting Setabelan | **Belum tersedia** (SK belum diterima), ditulis "Belum tersedia" | - |
-| Amal usaha (SMA Muhammadiyah 6, 9 masjid, Wisma Musolla Pemuda) | Laporan Musycab 2023 hlm. 12; berkas "amal usaha pcm banjarsari"; papan "Tanah Milik Muhammadiyah" di lokasi | _isi_ |
-| Berita dan agenda koordinasi 16 Okt 2026 | Poster dan contoh publikasi "PCM Banjarsari News" dari pengurus | _isi_ |
-| Agenda Pengajian Hari Bermuhammadiyah (25 Okt) dan Safari Dakwah (rencana Des–Jan, belum pasti) | Berkas "kegiatan mendatang pcm banjarsari" | _isi_ |
-| Kegiatan rutin (rapat pleno, pengajian HPT, dll.) | Berkas "kegiatan rutin pcm banjarsari" | _isi_ |
-| Visi dan misi | Berkas "visi misi muhammadiyah" | _isi_ |
-| Tagline "Memajukan Banjarsari, Mencerahkan Semesta." | Sampul/footer dokumen Musycab 2023 | _isi_ |
-| Tautan PDM, PWM, PP | muhammadiyahsolo.com (tercantum di kop PDM Kota Surakarta), pwmjateng.com, muhammadiyah.or.id | _isi_ |
+| Amal usaha (SMA Muhammadiyah 6, 9 masjid, Wisma Musolla Pemuda) | Laporan Musycab 2023 hlm. 12; berkas "amal usaha pcm banjarsari"; papan "Tanah Milik Muhammadiyah" di lokasi | 16 Nov 2026 |
+| Berita dan agenda koordinasi 16 Okt 2026 | Poster dan contoh publikasi "PCM Banjarsari News" dari pengurus | 16 Nov 2026 |
+| Agenda Pengajian Hari Bermuhammadiyah (25 Okt) dan Safari Dakwah (rencana Des–Jan, belum pasti) | Berkas "kegiatan mendatang pcm banjarsari" | 16 Nov 2026 |
+| Kegiatan rutin (rapat pleno, pengajian HPT, dll.) | Berkas "kegiatan rutin pcm banjarsari" | 16 Nov 2026 |
+| Visi dan misi | Berkas "visi misi muhammadiyah" | 16 Nov 2026 |
+| Tagline "Memajukan Banjarsari, Mencerahkan Semesta." | Sampul/footer dokumen Musycab 2023 | 16 Nov 2026 |
+| Tautan PDM, PWM, PP | muhammadiyahsolo.com (tercantum di kop PDM Kota Surakarta), pwmjateng.com, muhammadiyah.or.id | 16 Nov 2026 |
 
 ### Catatan data
 
 - Tidak ada nomor HP pribadi, alamat rumah, NIK, atau NBM pengurus yang ditampilkan.
-- Data yang tidak ada (email sekretariat, alamat dan telepon ranting, ketua PRM Setabelan, foto pimpinan, dokumen unduhan) dikosongkan atau ditulis "Belum tersedia".
+- Data yang tidak ada (email sekretariat, alamat dan telepon ranting, ketua PRM Setabelan, dokumen unduhan, serta sebagian foto pengurus yang belum tersedia) dikosongkan atau ditulis "Belum tersedia".
 - Angka **513 anggota ber-KTAM** adalah data Musycab 2023 (periode 2015–2022). Perbarui lewat admin bila ada angka terbaru.
-- Foto (hero, sampul berita, foto pimpinan, gambar amal usaha) tidak disertakan; unggah sendiri lewat admin.
+- Aset gambar awal (hero, sampul berita, foto pimpinan, dan gambar amal usaha) disimpan di `web/seed_assets/` dan otomatis dimuat ke `media/` saat menjalankan `uv run python manage.py seed_pcm`.
 
 ## Teknologi
 
@@ -104,7 +104,8 @@ Lihat [`.env.example`](.env.example): `SECRET_KEY`, `DEBUG`, `ALLOWED_HOSTS`, `C
 ```
 config/        settings, urls, wsgi
 web/           models (+custom QuerySet), views, forms, admin, context processor, tests
-web/management/commands/seed_pcm.py   data riil PCM (tanpa gambar)
+web/seed_assets/  aset gambar awal untuk perintah seed_pcm
+web/management/commands/seed_pcm.py   data riil PCM beserta gambar
 templates/     base.html, 404.html, web/*.html (+ _kartu_berita, _item_agenda)
 static/css/    site.css
 ```
@@ -113,7 +114,7 @@ static/css/    site.css
 
 | Anggota | Dikerjakan |
 |---------|------------|
-| _isi_ | _isi_ |
+| Azwar   | seed_data_aset |
 | _isi_ | _isi_ |
 
 ## Akun admin demo
@@ -122,4 +123,8 @@ Dikirim terpisah ke dosen, tidak di-commit.
 
 ## Lisensi dan atribusi
 
-Logo Muhammadiyah: K. H. Siradj Dahlan, vektor oleh Hibensis, via Wikimedia Commons, lisensi CC BY-SA 4.0.
+- **Logo Muhammadiyah:** K. H. Siradj Dahlan, vektor oleh Hibensis, via Wikimedia Commons, lisensi CC BY-SA 4.0.
+- **Kredit foto & dokumentasi:**
+  - Foto kegiatan koordinasi & hero (`IMG_4354.JPG`): Dokumentasi PCM Banjarsari (atas izin Sumardi, Sekretaris PCM Banjarsari).
+  - Foto pimpinan (`IMG-20251003-WA0035.jpg`, `1691497765_9ea87bbb-3765-4dcb-afda-f977e0s3e1201.jpg`): Arsip publikasi & dokumentasi pengurus PCM Banjarsari.
+  - Gambar lokasi amal usaha (`unnamed.jpg`, `unnamed.webp`, `Screenshot_*.png`): Dokumentasi lokasi & Google Maps/Street View untuk keperluan pemetaan amal usaha PCM Banjarsari.
