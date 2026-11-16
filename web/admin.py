@@ -65,6 +65,7 @@ class AgendaAdmin(admin.ModelAdmin):
 class DokumenAdmin(admin.ModelAdmin):
     list_display = ("judul", "keterangan", "tanggal_unggah")
     search_fields = ("judul", "keterangan")
+    date_hierarchy = "tanggal_unggah"
 
 
 @admin.register(PesanMasuk)
@@ -89,3 +90,4 @@ class PesanMasukAdmin(admin.ModelAdmin):
 class TautanTerkaitAdmin(admin.ModelAdmin):
     list_display = ("nama", "url", "urutan")
     list_editable = ("urutan",)
+    search_fields = ("nama", "url")
