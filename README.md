@@ -87,9 +87,9 @@ docker compose exec web uv run python manage.py createsuperuser
 
 ## Deployment
 
-- **Platform:** Render — gratis, support Docker native, auto-deploy dari GitHub
-- **Database:** Neon (PostgreSQL serverless gratis) — alasan: free tier cukup, mendukung direct connection untuk migrasi
-- **Object storage media:** Supabase Storage (via S3-compatible API) — alasan: gratis 1 GB, mudah diintegrasikan dengan django-storages
+- **Platform:** Vercel — gratis tanpa kartu kredit, serverless function dengan global CDN untuk file statis, auto-deploy dari GitHub
+- **Database:** Neon (PostgreSQL serverless gratis) — direct connection untuk migrasi dari laptop, connection pooler untuk produksi
+- **Object storage media:** Supabase Storage (via S3-compatible API) — gratis 1 GB, mudah diintegrasikan dengan django-storages
 - **URL produksi:** _akan diisi setelah deploy_
 
 Langkah ringkas: atur environment variable di dashboard platform, jalankan
@@ -121,7 +121,7 @@ static/css/    site.css
 | Daffa Raihan Harahap | fitur/model-admin — model & admin Django (A1/A3) |
 | Azwar Dipo Astuko | fitur/seed-data-aset — seed_pcm data riil beserta gambar |
 | Gibran Alghifari Maulana Masli | fitur/config-docker-ci — S3-compatible storage & entrypoint migrate |
-| Kaukaban Syarqi Nur Budiono | fitur/deploy-render — deployment ke Render + Neon + Supabase Storage |
+| Kaukaban Syarqi Nur Budiono | fitur/deploy-vercel — deployment ke Vercel + Neon + Supabase Storage |
 
 ## Akun admin demo
 

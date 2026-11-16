@@ -29,8 +29,10 @@ if not SECRET_KEY:
     else:
         raise RuntimeError("SECRET_KEY wajib diatur lewat environment variable saat DEBUG=False.")
 
-ALLOWED_HOSTS = env_list("ALLOWED_HOSTS", "localhost,127.0.0.1")
+ALLOWED_HOSTS = env_list("ALLOWED_HOSTS", "localhost,127.0.0.1,.vercel.app")
 CSRF_TRUSTED_ORIGINS = env_list("CSRF_TRUSTED_ORIGINS")
+if os.environ.get("VERCEL") and not CSRF_TRUSTED_ORIGINS:
+    CSRF_TRUSTED_ORIGINS = ["https://*.vercel.app"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
