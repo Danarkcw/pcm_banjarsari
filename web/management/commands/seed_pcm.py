@@ -1,4 +1,4 @@
-"""Mengisi database kosong dengan data riil PCM Banjarsari (tanpa gambar; foto diunggah lewat admin).
+"""Mengisi database kosong dengan data riil PCM Banjarsari beserta aset gambar.
 
 Aman dijalankan berulang kali: data dicocokkan lewat nama/judul lalu diperbarui, bukan digandakan.
 Sumber setiap data dicatat di README.md (tabel "Sumber data").
@@ -6,8 +6,10 @@ Data yang tidak tersedia dikosongkan, tidak dikarang.
 """
 
 from datetime import datetime
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
@@ -22,11 +24,20 @@ from web.models import (
 )
 
 WIB = ZoneInfo("Asia/Jakarta")
+ASSET = Path(__file__).resolve().parents[2] / "seed_assets"
 
 
 def waktu(tahun, bulan, hari, jam=0, menit=0):
     """Jam 00:00 berarti jam acara belum diketahui (tidak ditampilkan di website)."""
     return datetime(tahun, bulan, hari, jam, menit, tzinfo=WIB)
+
+
+def pasang(obj, field, relatif):
+    if not relatif:
+        return
+    path = ASSET / relatif
+    if path.exists() and not field:
+        field.save(path.name, ContentFile(path.read_bytes()), save=False)
 
 
 PROFIL = {
@@ -64,22 +75,23 @@ PROFIL = {
     "telepon": "0271-667533",
     "email": "",
     "jumlah_anggota_ktam": 513,
+    "gambar_hero": "hero/IMG_4354.JPG",
 }
 
 # Susunan Pimpinan PCM Banjarsari periode 2022-2027 (SK PCM No. 157/KEP/IV.0/D/2023).
 PIMPINAN = [
-    ("DR. Rusmanto, S.Pd.I., M.Pd.I.", "Ketua"),
-    ("H.M. Dedy Purnomo, S.S., S.H., M.H.", "Wakil Ketua 1"),
-    ("Sumardi", "Sekretaris"),
-    ("H. Wiwit Hidayat, S.E.", "Wakil Sekretaris"),
-    ("H. Farid Tribune Unique, S.E.", "Bendahara"),
-    ("Fatchul Hadi, S.H.", "Wakil Bendahara"),
-    ("Drs. HM. Joko Riyanto, S.H., M.M., M.H.", "Anggota"),
-    ("Drs. H. Sukendar, M.Pd.", "Anggota"),
-    ("Drs. H. Mahmud Hasni", "Anggota"),
-    ("H.M. Rochmadin Mansyur, S.E.", "Anggota"),
-    ("Andy Ratmanto, S.H.", "Anggota"),
-    ("Drs. Sinwan Fajar Nahari", "Anggota"),
+    ("DR. Rusmanto, S.Pd.I., M.Pd.I.", "Ketua", "pimpinan/IMG-20251003-WA0035.jpg"),
+    ("H.M. Dedy Purnomo, S.S., S.H., M.H.", "Wakil Ketua 1", "pimpinan/1691497765_9ea87bbb-3765-4dcb-afda-f977e0s3e1201.jpg"),
+    ("Sumardi", "Sekretaris", ""),
+    ("H. Wiwit Hidayat, S.E.", "Wakil Sekretaris", ""),
+    ("H. Farid Tribune Unique, S.E.", "Bendahara", ""),
+    ("Fatchul Hadi, S.H.", "Wakil Bendahara", ""),
+    ("Drs. HM. Joko Riyanto, S.H., M.M., M.H.", "Anggota", ""),
+    ("Drs. H. Sukendar, M.Pd.", "Anggota", ""),
+    ("Drs. H. Mahmud Hasni", "Anggota", ""),
+    ("H.M. Rochmadin Mansyur, S.E.", "Anggota", ""),
+    ("Andy Ratmanto, S.H.", "Anggota", ""),
+    ("Drs. Sinwan Fajar Nahari", "Anggota", ""),
 ]
 
 # Ketua ranting dari SK penetapan struktur masing-masing PRM. Setabelan: SK belum diterima.
@@ -99,6 +111,7 @@ AMAL_USAHA = [
         "bidang": AmalUsaha.Bidang.PENDIDIKAN,
         "alamat": "Jl. Banyuanyar, Banyuanyar, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57137",
         "deskripsi": "Sekolah menengah atas amal usaha Muhammadiyah di wilayah Banjarsari.",
+        "gambar": "amal-usaha/unnamed.jpg",
     },
     {
         "nama": "Wisma Musolla Pemuda",
@@ -108,15 +121,107 @@ AMAL_USAHA = [
             "Gedung wakaf di Jageran, Ketelan. Papan di lokasi menyebutnya tanah milik Muhammadiyah "
             "Kota Surakarta (nomor HMW 1, luas 214 m²)."
         ),
+        "gambar": "amal-usaha/unnamed.webp",
     },
     {
-        "nama": "Masjid Milik Muhammadiyah (9 masjid)",
+        "nama": "Masjid Muhammadiyah Balai",
         "bidang": AmalUsaha.Bidang.SOSIAL,
-        "alamat": "Ranting Gilingan, Setabelan, Kestalan, dan Keprabon",
+        "alamat": "Jl. Teuku Umar, Keprabon, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57131",
         "deskripsi": (
-            "Sembilan masjid milik Muhammadiyah yang dikelola pimpinan ranting: "
-            "3 di PRM Gilingan, 2 di PRM Setabelan, 1 di PRM Kestalan, dan 3 di PRM Keprabon."
+            "Masjid Muhammadiyah Balai beralamat di Jl. Teuku Umar, Keprabon, Kecamatan Banjarsari, "
+            "Kota Surakarta, Jawa Tengah 57131. Masjid ini berada di lingkungan Persyarikatan Muhammadiyah "
+            "dan menjadi pusat ibadah serta kegiatan dakwah jamaah di sekitarnya."
         ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_194249.png",
+    },
+    {
+        "nama": "Masjid Sontohartanan",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. K.H Ahmad Dahlan No.25, Keprabon, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57131",
+        "deskripsi": (
+            "Masjid Sontohartanan beralamat di Jl. K.H. Ahmad Dahlan No. 25, Keprabon, Kecamatan Banjarsari, "
+            "Kota Surakarta, Jawa Tengah 57131. Masjid ini memiliki nilai sejarah yang penting bagi persyarikatan, "
+            "karena menjadi tempat lahirnya Muhammadiyah dan 'Aisyiyah di Kota Surakarta. Kini masjid tersebut "
+            "dikenang sebagai monumen perjalanan dakwah Muhammadiyah dan 'Aisyiyah di Kota Surakarta."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_195037.png",
+    },
+    {
+        "nama": "Masjid Nur Rohim Keprabon",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Saparua 3, Keprabon, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57131",
+        "deskripsi": (
+            "Masjid Nur Rohim berlokasi di Jl. Saparua 3, Keprabon, Kecamatan Banjarsari, "
+            "Kota Surakarta, Jawa Tengah 57131. Masjid ini melayani kebutuhan ibadah dan kegiatan "
+            "keagamaan jamaah di lingkungan Keprabon."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_195704.png",
+    },
+    {
+        "nama": "Masjid As Siraaj",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Pringgading II, RT.01/RW.IX, Setabelan, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57139",
+        "deskripsi": (
+            "Masjid As Siraaj berlokasi di Jl. Pringgading II, RT 01/RW IX, Kelurahan Setabelan, "
+            "Kecamatan Banjarsari, Kota Surakarta, Jawa Tengah 57139. Masjid ini melayani kebutuhan ibadah "
+            "dan kegiatan keagamaan jamaah di lingkungan Setabelan."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_200243.png",
+    },
+    {
+        "nama": "Masjid Al-Mubarokah",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Sambeng, Mangkubumen, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57139",
+        "deskripsi": (
+            "Masjid Al-Mubarokah berlokasi di Jl. Sambeng, Kelurahan Mangkubumen, Kecamatan Banjarsari, "
+            "Kota Surakarta, Jawa Tengah 57139. Masjid ini melayani kebutuhan ibadah dan kegiatan "
+            "keagamaan jamaah di lingkungan Mangkubumen."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_200623.png",
+    },
+    {
+        "nama": "Masjid Al Falah Solo",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Manunggal No.RT.01/14, Banjarsari, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57136",
+        "deskripsi": (
+            "Masjid Al Falah berlokasi di Jl. Manunggal, RT 01/RW 14, Kelurahan Banjarsari, "
+            "Kecamatan Banjarsari, Kota Surakarta, Jawa Tengah 57136. Masjid ini melayani kebutuhan ibadah "
+            "dan kegiatan keagamaan jamaah di lingkungan sekitarnya."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_201100.png",
+    },
+    {
+        "nama": "Masjid As Salaam",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Rejosari, Gilingan, Banjarsari, Surakarta City, Central Java 57134",
+        "deskripsi": (
+            "Masjid As Salaam berlokasi di Jl. Rejosari, Kelurahan Gilingan, Kecamatan Banjarsari, "
+            "Kota Surakarta, Jawa Tengah 57134. Masjid ini melayani kebutuhan ibadah dan kegiatan "
+            "keagamaan jamaah di lingkungan Gilingan."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_201446.png",
+    },
+    {
+        "nama": "Masjid Mukmin",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Mayang, Kestalan, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57139",
+        "deskripsi": (
+            "Masjid Mukmin berlokasi di Jl. Mayang, Kelurahan Kestalan, Kecamatan Banjarsari, "
+            "Kota Surakarta, Jawa Tengah 57139. Masjid ini melayani kebutuhan ibadah dan kegiatan "
+            "keagamaan jamaah di lingkungan Kestalan."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_202048.png",
+    },
+    {
+        "nama": "Masjid H. Munawarhadi RS PKU Muhammadiyah Surakarta",
+        "bidang": AmalUsaha.Bidang.SOSIAL,
+        "alamat": "Jl. Ronggowarsito No.130, Timuran, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57131",
+        "deskripsi": (
+            "Masjid H. Munawarhadi berada di lingkungan RS PKU Muhammadiyah Surakarta, Jl. Ronggowarsito No. 130, "
+            "Kelurahan Timuran, Kecamatan Banjarsari, Kota Surakarta, Jawa Tengah 57131. Masjid ini melayani "
+            "kebutuhan ibadah pasien, keluarga pasien, tenaga kesehatan, dan masyarakat sekitar rumah sakit."
+        ),
+        "gambar": "amal-usaha/Screenshot_2026-11-16_202454.png",
     },
 ]
 
@@ -138,6 +243,7 @@ BERITA = [
             "Bersama Menguatkan Persyarikatan, Menebar Dakwah yang Mencerahkan."
         ),
         "tanggal": waktu(2026, 10, 16, 12, 0),
+        "gambar_sampul": "berita/IMG_4354.JPG",
     },
 ]
 
@@ -173,32 +279,43 @@ TAUTAN = [
 
 
 class Command(BaseCommand):
-    help = "Mengisi database dengan data riil PCM Banjarsari (aman dijalankan berulang)."
+    help = "Mengisi database dengan data riil PCM Banjarsari beserta gambar (aman dijalankan berulang)."
 
     @transaction.atomic
     def handle(self, *args, **options):
         profil = Profil.objects.first() or Profil()
         for kolom, nilai in PROFIL.items():
-            setattr(profil, kolom, nilai)
+            if kolom != "gambar_hero":
+                setattr(profil, kolom, nilai)
+        pasang(profil, profil.gambar_hero, PROFIL.get("gambar_hero", ""))
         profil.save()
 
-        for urutan, (nama, jabatan) in enumerate(PIMPINAN, start=1):
-            Pimpinan.objects.update_or_create(
+        for urutan, (nama, jabatan, foto) in enumerate(PIMPINAN, start=1):
+            obj, _ = Pimpinan.objects.update_or_create(
                 nama=nama,
                 defaults={"jabatan": jabatan, "periode": "2022–2027", "urutan": urutan},
             )
+            if foto:
+                pasang(obj, obj.foto, foto)
+                obj.save(update_fields=["foto"])
 
         for nama, ketua in RANTING:
             Ranting.objects.update_or_create(nama=nama, defaults={"ketua": ketua})
 
+        # Hapus data agregat lama jika ada agar diganti 11 data riil individual
+        AmalUsaha.objects.filter(nama="Masjid Milik Muhammadiyah (9 masjid)").delete()
+
         for data in AMAL_USAHA:
-            AmalUsaha.objects.update_or_create(
+            obj, _ = AmalUsaha.objects.update_or_create(
                 nama=data["nama"],
                 defaults={k: data[k] for k in ("bidang", "alamat", "deskripsi")},
             )
+            if data.get("gambar"):
+                pasang(obj, obj.gambar, data["gambar"])
+                obj.save(update_fields=["gambar"])
 
         for data in BERITA:
-            Berita.objects.update_or_create(
+            obj, _ = Berita.objects.update_or_create(
                 judul=data["judul"],
                 defaults={
                     "ringkasan": data["ringkasan"],
@@ -207,6 +324,9 @@ class Command(BaseCommand):
                     "status": Berita.Status.TERBIT,
                 },
             )
+            if data.get("gambar_sampul"):
+                pasang(obj, obj.gambar_sampul, data["gambar_sampul"])
+                obj.save(update_fields=["gambar_sampul"])
 
         for data in AGENDA:
             Agenda.objects.update_or_create(
@@ -217,4 +337,4 @@ class Command(BaseCommand):
         for urutan, (nama, url) in enumerate(TAUTAN, start=1):
             TautanTerkait.objects.update_or_create(nama=nama, defaults={"url": url, "urutan": urutan})
 
-        self.stdout.write(self.style.SUCCESS("Data PCM Banjarsari berhasil dimuat."))
+        self.stdout.write(self.style.SUCCESS("Data PCM Banjarsari beserta aset gambar berhasil dimuat."))
