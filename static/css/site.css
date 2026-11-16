@@ -34,6 +34,10 @@ ul.plain { list-style: none; margin: 0; padding: 0; }
 .meta { color: var(--abu); font-size: .88rem; }
 .kosong { color: var(--abu); font-style: italic; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 1rem; top: -3rem; z-index: 100; background: var(--kuning); color: #3a2b00; padding: .5rem .9rem; border-radius: 6px; font-weight: 600; text-decoration: none; transition: top .15s ease; }
+.skip-link:focus { top: .75rem; }
+#konten { scroll-margin-top: 80px; }
+a:focus-visible, .btn:focus-visible, .nav-toggle:focus-visible { outline: 3px solid var(--kuning); outline-offset: 2px; }
 
 /* Header */
 .site-header { background: var(--hijau-tua); color: var(--putih); position: sticky; top: 0; z-index: 10; }
@@ -88,12 +92,18 @@ ul.plain { list-style: none; margin: 0; padding: 0; }
 .statistik li { background: var(--putih); border: 1px solid var(--garis); border-radius: var(--radius); box-shadow: 0 4px 14px rgba(6, 64, 43, .08); text-align: center; padding: 1rem .5rem; }
 .statistik strong { display: block; font-size: 1.7rem; color: var(--hijau); }
 .statistik span { color: var(--abu); font-size: .88rem; }
-@media (max-width: 520px) { .statistik { grid-template-columns: 1fr; margin-top: 1rem; } }
+@media (max-width: 520px) {
+  .statistik { grid-template-columns: 1fr; margin-top: 1rem; }
+  .section-head { align-items: flex-start; }
+  .daftar-unduhan li { flex-direction: column; align-items: flex-start; }
+  .agenda-item { gap: .7rem; }
+  .agenda-tanggal { flex-basis: 52px; }
+}
 
 /* Judul halaman */
 .page-title { background: var(--hijau-muda); border-bottom: 1px solid var(--garis); padding-block: 1.1rem; }
 .page-title h1 { margin: 0; }
-.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .8rem; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .8rem; flex-wrap: wrap; }
 .sub { margin-top: 1.4rem; }
 
 /* Kartu */
