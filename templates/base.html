@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
 </head>
 <body>
+  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
   {% with halaman=request.resolver_match.url_name %}
   <header class="site-header">
     <div class="wrap header-bar">
@@ -42,7 +43,7 @@
   </div>
   {% endif %}
 
-  <main>
+  <main id="konten">
     {% block content %}{% endblock %}
   </main>
 
@@ -74,15 +75,28 @@
       </div>
     </div>
   </footer>
-
   <script>
     (function () {
       var tombol = document.querySelector('.nav-toggle');
       var menu = document.getElementById('menu-utama');
       if (!tombol || !menu) return;
+
+      function tutupMenu() {
+        menu.classList.remove('terbuka');
+        tombol.setAttribute('aria-expanded', 'false');
+      }
+
       tombol.addEventListener('click', function () {
         var terbuka = menu.classList.toggle('terbuka');
         tombol.setAttribute('aria-expanded', terbuka ? 'true' : 'false');
+      });
+
+      menu.querySelectorAll('a').forEach(function (tautan) {
+        tautan.addEventListener('click', tutupMenu);
+      });
+
+      document.addEventListener('keydown', function (peristiwa) {
+        if (peristiwa.key === 'Escape') tutupMenu();
       });
     })();
   </script>
