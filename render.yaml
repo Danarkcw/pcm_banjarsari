@@ -1,0 +1,54 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy otomatis: sambungkan repo GitHub di dashboard Render, pilih file ini.
+#
+# Environment variable yang WAJIB diisi manual di dashboard Render (tidak disimpan di repo):
+#   SECRET_KEY             — string acak panjang (pakai: python -c "import secrets; print(secrets.token_urlsafe(50))")
+#   DATABASE_URL           — connection string Neon (direct, bukan pooler) untuk migrate
+#   AWS_STORAGE_BUCKET_NAME — nama bucket Supabase Storage
+#   AWS_ACCESS_KEY_ID      — Supabase Storage access key
+#   AWS_SECRET_ACCESS_KEY  — Supabase Storage secret key
+#   AWS_S3_ENDPOINT_URL    — mis. https://<project>.supabase.co/storage/v1/s3
+#   AWS_S3_REGION_NAME     — us-east-1 (Supabase pakai ini)
+#   ALLOWED_HOSTS          — <nama-service>.onrender.com
+#   CSRF_TRUSTED_ORIGINS   — https://<nama-service>.onrender.com
+
+services:
+  - type: web
+    name: pcm-banjarsari
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    # Branch yang di-deploy; ganti ke main setelah PR di-merge.
+    branch: main
+    plan: free
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: PORT
+        value: "8000"
+      - key: WEB_CONCURRENCY
+        value: "2"
+      - key: SECURE_SSL_REDIRECT
+        value: "False"
+      - key: SESSION_COOKIE_SECURE
+        value: "True"
+      - key: CSRF_COOKIE_SECURE
+        value: "True"
+      # Variabel rahasia — isi via dashboard Render, JANGAN di-hardcode di sini:
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: CSRF_TRUSTED_ORIGINS
+        sync: false
+      - key: AWS_STORAGE_BUCKET_NAME
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_S3_ENDPOINT_URL
+        sync: false
+      - key: AWS_S3_REGION_NAME
+        sync: false

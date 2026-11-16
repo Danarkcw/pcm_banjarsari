@@ -9,10 +9,13 @@ Tugas 1 — Pemrograman Web berbasis Framework (TIF1336): membangun dan men-depl
 
 | Nama | NIM |
 |------|-----|
-| _isi nama anggota 1_ | _NIM_ |
-| _isi nama anggota 2_ | _NIM_ |
+| Daffa Raihan Harahap | L200240203 |
+| Danar Tri Prayoga | L200240185 |
+| Azwar Dipo Astuko | L200240173 |
+| Kaukaban Syarqi Nur Budiono | L200240176 |
+| Gibran Alghifari Maulana Masli | L200240172 |
 
-**Nama kelompok:** _isi_
+**Nama kelompok:** PCM Banjarsari
 
 ## PCM yang dipilih
 
@@ -84,10 +87,10 @@ docker compose exec web uv run python manage.py createsuperuser
 
 ## Deployment
 
-- **Platform:** _isi (Vercel / Render / Railway)_ — alasan: _isi_
-- **Database:** _isi (Supabase / Neon)_ — alasan: _isi_
-- **Object storage media:** _isi (mis. Supabase Storage via S3)_ — alasan: _isi_
-- **URL produksi:** _isi_
+- **Platform:** Render — gratis, support Docker native, auto-deploy dari GitHub
+- **Database:** Neon (PostgreSQL serverless gratis) — alasan: free tier cukup, mendukung direct connection untuk migrasi
+- **Object storage media:** Supabase Storage (via S3-compatible API) — alasan: gratis 1 GB, mudah diintegrasikan dengan django-storages
+- **URL produksi:** _akan diisi setelah deploy_
 
 Langkah ringkas: atur environment variable di dashboard platform, jalankan
 `DATABASE_URL=<url produksi> uv run python manage.py migrate` lalu `... seed_pcm` dari laptop, dan buat superuser.
@@ -114,8 +117,11 @@ static/css/    site.css
 
 | Anggota | Dikerjakan |
 |---------|------------|
-| Azwar   | seed_data_aset |
-| _isi_ | _isi_ |
+| Danar Tri Prayoga | Inisialisasi proyek (struktur Django, Docker, CI, settings) |
+| Daffa Raihan Harahap | fitur/model-admin — model & admin Django (A1/A3) |
+| Azwar Dipo Astuko | fitur/seed-data-aset — seed_pcm data riil beserta gambar |
+| Gibran Alghifari Maulana Masli | fitur/config-docker-ci — S3-compatible storage & entrypoint migrate |
+| Kaukaban Syarqi Nur Budiono | fitur/deploy-render — deployment ke Render + Neon + Supabase Storage |
 
 ## Akun admin demo
 
