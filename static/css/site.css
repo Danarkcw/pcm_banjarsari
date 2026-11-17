@@ -181,3 +181,7 @@ blockquote { margin: 0 0 1rem; padding: .8rem 1rem; background: var(--hijau-muda
 .site-footer li { margin-bottom: .25rem; }
 .atribusi { font-size: .78rem; color: #b5ccbd; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } }
+
+blockquote { margin: 0 0 1rem; padding: .8rem 1rem; background: var(--hijau-muda); border-left: 4px solid var(--hijau-aksen); border-radius: 4px; }
+blockquote.misi ol { margin: 0; padding-left: 1.3rem; }
+blockquote.misi li + li { margin-top: .4rem; }
