@@ -96,48 +96,13 @@ PIMPINAN = [
 
 # Ketua ranting dari SK penetapan struktur masing-masing PRM. Setabelan: SK belum diterima.
 RANTING = [
-    {
-        "ranting": "PRM Gilingan",
-        "ketua": "Drs. H. Sinwan Fajar Nahari",
-        "alamat": "Jl. S. Parman No. 229, Cinderejo Kidul RT 02 RW 09, Gilingan, Banjarsari",
-        "telepon": "0878 3533 5489",
-    },
-    {
-        "ranting": "PRM Keprabon",
-        "ketua": "H.M. Rochmadin Mansyur, S.E.",
-        "alamat": "Jl. KH. Ahmad Dahlan No. 35, Keprabon",
-        "telepon": "0813 2905 7993",
-    },
-    {
-        "ranting": "PRM Kestalan",
-        "ketua": "H. Heru Purwoko, S.E.",
-        "alamat": "Masjid Mukmin Kandangdoro, Jl. Mayang No. 14, Kestalan",
-        "telepon": "0812 2611 340",
-    },
-    {
-        "ranting": "PRM Ketelan",
-        "ketua": "Drs. H. Sukendar, M.Pd.",
-        "alamat": "Gedung Wisma Musolla Pemuda, Jl. Jageran No. 10, Ketelan, Banjarsari",
-        "telepon": "0821 3642 3266",
-    },
-    {
-        "ranting": "PRM Punggawan",
-        "ketua": "Joko Jaelani, S.Pd.",
-        "alamat": "Masjid Ar Ridho Bromantakan, Punggawan, Banjarsari",
-        "telepon": "0896 7228 0921",
-    },
-    {
-        "ranting": "PRM Setabelan",
-        "ketua": "H. Trijoko Suryanto, S.E.",
-        "alamat": "Masjid As Sirodj, Jl. Pringgading I, Pringgading (Ps. Legi), Setabelan",
-        "telepon": "0813 3364 1371",
-    },
-    {
-        "ranting": "PRM Timuran",
-        "ketua": "Drs. H. Mahmud Hasni",
-        "alamat": "Masjid Mukmin Priyobadan, Timuran, Banjarsari",
-        "telepon": "0819 1873 9163",
-    },
+    ("PRM Gilingan", "Drs. H. Sinwan Fajar Nahari", "Jl. S. Parman No. 229, Cinderejo Kidul RT 02 RW 09, Gilingan, Banjarsari", "0878 3533 5489"),
+    ("PRM Keprabon", "H.M. Rochmadin Mansyur, S.E.", "Jl. KH. Ahmad Dahlan No. 35, Keprabon", "0813 2905 7993"),
+    ("PRM Kestalan", "H. Heru Purwoko, S.E.", "Masjid Mukmin Kandangdoro, Jl. Mayang No. 14, Kestalan", "0812 2611 340"),
+    ("PRM Ketelan", "Drs. H. Sukendar, M.Pd.", "Gedung Wisma Musolla Pemuda, Jl. Jageran No. 10, Ketelan, Banjarsari", "0821 3642 3266"),
+    ("PRM Punggawan", "Joko Jaelani, S.Pd.", "Masjid Ar Ridho Bromantakan, Punggawan, Banjarsari", "0896 7228 0921"),
+    ("PRM Setabelan", "H. Trijoko Suryanto, S.E.", "Masjid As Sirodj, Jl. Pringgading I, Pringgading (Ps. Legi), Setabelan", "0813 3364 1371"),
+    ("PRM Timuran", "Drs. H. Mahmud Hasni", "Masjid Mukmin Priyobadan, Timuran, Banjarsari", "0819 1873 9163"),
 ]
 
 AMAL_USAHA = [
