@@ -333,16 +333,16 @@ class Command(BaseCommand):
             if foto:
                 pasang(obj, obj.foto, foto)
                 obj.save(update_fields=["foto"])
-
+                
         for nama, ketua, alamat, telepon in RANTING:
-    Ranting.objects.update_or_create(
-        nama=nama,  # sesuaikan dengan nama field di models.py (misal: nama atau judul)
-        defaults={
-            "ketua": ketua,
-            "alamat": alamat,
-            "telepon": telepon,
-        },
-    )
+            Ranting.objects.update_or_create(
+                nama=nama,
+                defaults={
+                    "ketua": ketua,
+                    "alamat": alamat,
+                    "telepon": telepon,
+                },
+            )
 
         # Hapus data agregat lama jika ada agar diganti 11 data riil individual
         AmalUsaha.objects.filter(nama="Masjid Milik Muhammadiyah (9 masjid)").delete()
