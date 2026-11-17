@@ -134,3 +134,4 @@ Dikirim terpisah ke dosen, tidak di-commit.
   - Foto kegiatan koordinasi & hero (`IMG_4354.JPG`): Dokumentasi PCM Banjarsari (atas izin Sumardi, Sekretaris PCM Banjarsari).
   - Foto pimpinan (`IMG-20251003-WA0035.jpg`, `1691497765_9ea87bbb-3765-4dcb-afda-f977e0s3e1201.jpg`): Arsip publikasi & dokumentasi pengurus PCM Banjarsari.
   - Gambar lokasi amal usaha (`unnamed.jpg`, `unnamed.webp`, `Screenshot_*.png`): Dokumentasi lokasi & Google Maps/Street View untuk keperluan pemetaan amal usaha PCM Banjarsari.
+selesai 
